@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Project</title>
+    <!-- Иконки для стрелочки и крестика -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Экран авторизации -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Вход в систему</h2>
+            <input type="text" id="username" placeholder="Логин">
+            <input type="password" id="password" placeholder="Пароль">
+            <button id="loginBtn">Войти</button>
+            <p id="error-msg" class="hidden">Неверные данные! Попробуй еще раз.</p>
+        </div>
+    </div>
+
+    <!-- Фоновая анимация (твои точки/коннекты) -->
+    <div class="connect-animation-layer">
+        <canvas id="connect-canvas"></canvas>
+    </div>
+
+    <!-- 1. Кнопка старта -->
+    <div id="start-wrapper">
+        <button class="main-btn" id="startBtn">Жми.</button>
+    </div>
+
+    <!-- Контейнер для вылетающих фото сердца -->
+    <div id="heart-container"></div>
+
+    <!-- 2. Кнопка "..." в центре (изначально скрыта) -->
+    <div id="dot-btn-wrapper" class="hidden">
+        <button id="dotBtn" class="square-outline-btn">...</button>
+    </div>
+
+    <!-- 3. Окно открытки -->
+    <div id="card-wrapper" class="hidden">
+        <div class="card">
+            <button id="closeCard" class="close-btn">&times;</button>
+            <h1 class="card-title">с др сладкая</h1>
+            <div class="card-content">
+                <p>кароче братишка с др тебя моя любимка, хотел бы пожелать побольше здоровья, счастья и друзей повернее. нужна будет помощь знаешь к кому обратится :)</p>
+                <div class="card-photos">
+                    <!-- Можно добавить еще фото сюда -->
+                    <img src="" alt="Matvey :3" style="width:100%; border-radius:10px; margin-top:15px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Финальная стрелка перехода -->
+    <div id="next-step-wrapper" class="hidden">
+        <button id="nextBtn" class="arrow-btn">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <!-- Аудиофайл (положи music.mp3 в папку) -->
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
+    <!-- Библиотека GSAP для крутых анимаций -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
